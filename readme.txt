@@ -167,5 +167,8 @@ Your data is only accessible through the WordPress dashboard. None of it will be
 * Initial Release
 
 == Upgrade Notice ==
-= 2.0.3 =
-* Added option for certain searchable select/option menus. Specifically, select menus for choosing a user, campaign, organization, contact, or project were added.
+= 2.0.4 =
+* Fix: Added MailChimp option to dashboard extension list.
+* Fix: WP-CRM System dashboard boxes were displaying at inconsistent heights making the page layout break. JS fix to ensure consistent heights.
+* New: WP-CRM System dashboard is visible to anyone who has access to WP-CRM System. Previously only administrators had access. WP-CRM System settings box is only visible to administrators.
+* New: Added option to restrict users to view their own records only. This only impacts users that are not administrators. Administrators can still view/edit/delete all records.
