@@ -3,7 +3,7 @@ Contributors: scott.deluzio
 Tags:  WordPress CRM, wp crm, CRM, project management, marketing, customer management
 Requires at least: 3.3.0
 Tested up to: 4.6.1
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,8 @@ Absolutely. There are inexpensive extensions that allow you to import as little 
 Your data is only accessible through the WordPress dashboard. None of it will be accessible through the public facing portion of your website. This allows you to provide access to as few or as many people as you need to.
 
 == Changelog ==
+= 2.0.6 =
+* New: Hook added to allow extensions listed on WP-CRM System dashboard through the extension plugin, rather than hardcode in WP-CRM System. Developers can add_filter('wpcrm_system_dashboard_extensions') to be included here.
 = 2.0.5 =
 * Fix: New installs of the plugin were not displaying the WP-CRM System dashboard correctly.
 = 2.0.4 =
@@ -169,5 +171,5 @@ Your data is only accessible through the WordPress dashboard. None of it will be
 * Initial Release
 
 == Upgrade Notice ==
-= 2.0.5 =
-* Fix: New installs of the plugin were not displaying the WP-CRM System dashboard correctly.
+= 2.0.6 =
+* New: Hook added to allow extensions listed on WP-CRM System dashboard through the extension plugin, rather than hardcode in WP-CRM System. Developers can add_filter('wpcrm_system_dashboard_extensions') to be included here.
