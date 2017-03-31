@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 	global $wpdb;
-	include( WP_CRM_SYSTEM_PLUGIN_DIR . '/includes/wcs-vars.php');
+	include( WP_CRM_SYSTEM_PLUGIN_DIR . '/includes/wcs-vars.php' );
 	$active_report = isset( $_GET[ 'report' ] ) ? $_GET[ 'report' ] : '';
 
 	switch ($active_report) {
@@ -168,7 +168,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$posts = get_posts($args);
 			if ($posts) {
 				foreach($posts as $post) {
-					$task_report = '<tr><td><a href="' . get_edit_post_link($post->ID) . '">' . get_the_title($post->ID) . '</a> - Due on ' . date(get_option('wpcrm_system_php_date_format'),get_post_meta($post->ID,$meta_key2,true)) . '</td></tr>';
+					$task_report .= '<tr><td><a href="' . get_edit_post_link($post->ID) . '">' . get_the_title($post->ID) . '</a> - Due on ' . date(get_option('wpcrm_system_php_date_format'),get_post_meta($post->ID,$meta_key2,true)) . '</td></tr>';
 				}
 			} else {
 				$task_report = '<tr><td>' . $no_tasks . '</td></tr>';

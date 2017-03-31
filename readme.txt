@@ -1,18 +1,18 @@
-=== WP-CRM System ===
+=== WordPress CRM Plugin - WP-CRM System ===
 Contributors: scott.deluzio
-Tags:  WordPress CRM, wp crm, CRM, project management, marketing, customer management
+Tags:  WordPress CRM, wp crm, CRM, project management, customer management
 Requires at least: 3.3.0
-Tested up to: 4.6.1
-Stable tag: 2.0.12
+Tested up to: 4.7.3
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WP-CRM System is a fully featured CRM designed to work exclusively with WordPress.
+WP-CRM System is a WordPress CRM that is designed to work exclusively with YOUR WordPress site.
 
 == Description ==
 WP-CRM System is a fully featured CRM that allows you to use the WordPress interface you are already familiar with to manage your customers, projects, and tasks with ease.
 
-Why spend hundreds or thousands of dollars on a CRM that charges based on the number of records you have in your database, or the number of users that you have accessing your database? WP-CRM System allows you to have an unlimited number of records and lets you give everyone in your organization access to the data they need to drive business.
+Why spend hundreds or thousands of dollars on a CRM that charges based on the number of records you have in your database, or the number of users that you have accessing your database? WP-CRM System allows you to have an unlimited number of records and lets you give everyone in your organization access to the WordPress CRM data they need to drive business.
 
 **More than a CRM**
 
@@ -24,7 +24,7 @@ Not sure if WP-CRM System is right for you? [Try out the demo](http://demo.wp-cr
 
 **Premium Extensions Available**
 
-There are a number of inexpensive extensions that will allow you to do more with WP-CRM System.
+There are a number of inexpensive WordPress CRM extensions that will allow you to do more with WP-CRM System.
 
 * [Client Area](https://www.wp-crm.com/downloads/client-area/) - Create a portal for clients to see the status of their projects, tasks, campaigns, and invoices.
 * [Less Accounting](https://www.wp-crm.com/downloads/less-accounting/) - Connect to Less Accounting to manage invoices, and client records.
@@ -71,6 +71,47 @@ Absolutely. There are inexpensive extensions that allow you to import as little 
 Your data is only accessible through the WordPress dashboard. None of it will be accessible through the public facing portion of your website. This allows you to provide access to as few or as many people as you need to.
 
 == Changelog ==
+= 2.1.3 =
+* Fix: If a record is moved to the trash, it still shows as being linked in the post_meta of other records. For example, a contact that is trashed, but was previously linked to an opportunity would still show as being linked to that opportunity. Fix "hides" the trashed from the record. A record that is restored from trash will retain it's previous position as being linked to other records.
+= 2.1.2 =
+* Fix: If a name prefix (Mr, Mrs, etc.) was not set for a contact, "Select an Option" text would display before the name on the dashboard "Address Book" section.
+= 2.1.0 & 2.1.1 =
+* New: Calendar on the dashboard to show all upcoming campaign, opportunity, project, and task dates.
+* New: System info provided for debugging purposes. 
+* New: Redesigned dashboard area with calendar, and quick pick for contacts, projects, tasks, and opportunities.
+* New: Filter wpcrmsystem_name_prefix added to allow custom name prefixes to be included.
+* New: Added contacts to the main organization listing page.
+* Improved: Removed option to select searchable dropdowns. All dynamic lists include searchable dropdowns now.
+* Improved: Searchable dropdown menus for all organization, contact, project, campaign, and user select menus.
+* Improved: Tooltip styling improved.
+* Improved: Premium plugin license keys moved under Settings tab.
+* Fix: Set admin capability for managing settings to manage_options. Previous capability activate_plugins caused multisite admins (not super admins) to not be able to update settings.
+* Fix: Tooltip formatting was showing for all links where the tooltip style was being loaded.
+= 2.0.24 =
+* Improved: Select menus for Organizations, and other records would extend over items in adjacent columns if the text contained within was too long. Minor CSS fix limits the width of these select menus.
+= 2.0.23 =
+* Improved: Sending emails to contacts in WP-CRM System now saves the email in the contact's record.
+* Fix: Errors when an organization was added without an address. https://wordpress.org/support/topic/debugging-error-when-address-is-omitted-from-organization
+= 2.0.22 =
+* Fix: Overdue task report incorrectly listed only one task regardless of how many tasks were actually overdue.
+= 2.0.20 =
+* Fix: Fatal errors on certain sites using outdated PHP versions.
+= 2.0.19 =
+* New: Display photo for contacts in the WP-CRM System > Contact page if a "featured image" has been set for the contact, or the email address associated with the contact has a gravatar associated with it.
+* New: Filter contacts on the WP-CRM System > Contact page by organization. This allows you to easily view the contacts you have for a particular organization.
+* Fix: Corrected column title on WP-CRM System > (Contacts, Organizations, Projects, Campaigns, Opportunitites), which incorrectly labeled each as a Task.
+= 2.0.18 =
+* New: Optionally add an organization's address to the dropdown menu. Useful if you have multiple organizations with the same name but different locations.
+= 2.0.17 =
+* New: Sortable columns on post edit page for each record type.
+= 2.0.16 =
+* Minor update to ensure PHP 7 compatibility
+= 2.0.15 =
+* New: added subtab to settings pages for future settings improvements.
+= 2.0.14 =
+* Fix: 404 error on a script caused datepicker to not funciton correctly.
+= 2.0.13 =
+* Fix: New installs prevented WP-CRM System dashboard from loading properly.
 = 2.0.12 =
 * Fix: Script incorrectly looked up contact and organization address information when not viewing a contact or organization's record.
 = 2.0.11 =
@@ -189,5 +230,5 @@ Your data is only accessible through the WordPress dashboard. None of it will be
 * Initial Release
 
 == Upgrade Notice ==
-= 2.0.12 =
-* Fix: Script incorrectly looked up contact and organization address information when not viewing a contact or organization's record.
+= 2.1.3 =
+* Fix: If a record is moved to the trash, it still shows as being linked in the post_meta of other records. For example, a contact that is trashed, but was previously linked to an opportunity would still show as being linked to that opportunity. Fix "hides" the trashed from the record. A record that is restored from trash will retain it's previous position as being linked to other records.
