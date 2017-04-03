@@ -998,7 +998,7 @@ $defaultFields = wpcrm_system_fields();
                   }
                 }
               }
-								
+
               echo '<select id="' . '_wpcrm_' . $defaultField[ 'name' ] . '-input" class="wp-crm-system-searchable" style="display:none;" name="' . '_wpcrm_' . $defaultField[ 'name' ] . '">';
 							echo '<option value="" ' . selected( $selection, '' ) . '>Not Assigned</option>';
 							foreach($projects as $project) {
@@ -1041,7 +1041,9 @@ $defaultFields = wpcrm_system_fields();
 						?>
 						<label for="<?php echo '_wpcrm_' . $defaultField[ 'name' ]; ?>" style="display:<?php if ( isset( $selection ) && '' != $selection ) { echo 'none'; } else { echo 'inline'; }; ?>" id="<?php echo '_wpcrm_' . $defaultField[ 'name' ]; ?>-label"><strong><?php _e($defaultField[ 'title' ],'wp-crm-system'); ?></strong></label><?php if ( !isset( $selection ) || '' == $selection ) { echo '<br />'; } ?>
 						<select id="<?php echo '_wpcrm_' . $defaultField[ 'name' ] . '-input"'; if ( isset( $selection ) && '' != $selection ) { echo ' style="display:none;"'; } ?> name="<?php echo '_wpcrm_' . $defaultField[ 'name' ]; ?>">
-							<?php foreach ($args as $key => $value) { ?>
+							<?php
+              $display=''; //in case the foreach loop is not entered.
+              foreach ($args as $key => $value) { ?>
 								<option value="<?php echo $key; ?>" <?php if (esc_html( $selection ) == $key) { echo 'selected'; $display = $value; } ?> ><?php echo $value; if ( $defaultField[ 'type' ] == "selectprogress" ) { echo '%'; }?></option>
 								<?php } ?>
 							</select>
@@ -1285,7 +1287,7 @@ $defaultFields = wpcrm_system_fields();
 // Add content to the new meta box
 function wpcrm_system_display_email() {
   global $post;
-  $contact_emails = get_post_meta( $post->ID, '_wpcrm_system_email', false ); 
+  $contact_emails = get_post_meta( $post->ID, '_wpcrm_system_email', false );
   if ( $contact_emails ){ ?>
     <div class="contact_email_list">
     <?php
